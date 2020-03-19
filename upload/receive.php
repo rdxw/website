@@ -12,8 +12,11 @@
 					background-color: #343a40;
 					color: white;
 				}
+				nav {
+					margin-bottom: 15px;
+				}
 		</style>
-		<title>File Upload</title>
+		<title>File Upload Status</title>
 		<link rel="shortcut icon" href="https://1.bp.blogspot.com/-OJyRiPQaLS8/Xj7H1bJDZZI/AAAAAAAAAIA/87CuW0cP4Lk3KtFeWX-fYe1ySC99VcUKgCLcBGAsYHQ/s1600/file%2Bupload.png"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 		<meta charset="utf-8">
@@ -33,27 +36,31 @@
 				</ul>
 			</div>
 		</nav>
-		<div id="fiv">
-			<form method="post" enctype="multipart/form-data" action="receive.php">
-				<input type="file" name="myfile">
-				<input type="submit" value="SEND">
-			</form>
-			<!-- Footer -->
-			<div class="rkc">
-				<footer class="page-footer font-small blue">
-					<!-- Copyright -->
-					<div class="footer-copyright text-center py-3">© 2020 Copyright:
-						<a href="./"> uploadfile.chouhan.ml</a>
-					</div>
-				</div>
+		<?php
+		if (move_uploaded_file($_FILES["myfile"]["tmp_name"], "photos/".$_FILES
+		["myfile"]["name"])){
+		echo "File Uploaded";
+		}
+		else{
+		echo "File Not Uploaded";
+		}
+		?>
+		<!-- Footer -->
+		<div class="rkc">
+			<footer class="page-footer font-small blue">
 				<!-- Copyright -->
-			</footer>
-			<!-- Footer -->
-			<!-- Bootstap file -->
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-			<!-- Bootstap file -->
-		</div>
-	</body>
+				<div class="footer-copyright text-center py-3">© 2020 Copyright:
+					<a href="./"> uploadfile.chouhan.ml</a>
+				</div>
+			</div>
+			<!-- Copyright -->
+		</footer>
+		<!-- Footer -->
+		<!-- Bootstap file -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<!-- Bootstap file -->
+	</div>
+</body>
 </html>
