@@ -88,12 +88,16 @@
 				</ul>
 			</div>
 		</nav>
-		<form class="rajeshrjkc" name="example">
-			Value :) <input type="text" size="20" name="calculater">
-			<input type="button" name="B1" value="Calculate" onclick="cal()">
-			<input type="reset" name="B1" value="Reset"><br><br>
-			Answer :) <input type="text" size="20" name="answer">
-		</form>
+<div class="container">
+	<form class="rajeshrjkc" name="example">
+		<label for="usr">Value:</label>
+		<input class="form-control" type="text" size="20" name="calculater"><br>
+		<button class="btn btn-primary" type="button" name="B1" value="Calculate" onclick="cal()">Calculate</button>
+		<button class="btn btn-danger" type="reset" name="B1" value="Reset">Reset</button><br><br>
+		<label for="usr">Answer:</label>
+		<input class="form-control" type="text" size="20" name="answer">
+	</form>
+</div>
 		<script>
 		function cal() {
 		document.example.answer.value =
